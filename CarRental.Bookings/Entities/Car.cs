@@ -8,10 +8,15 @@ namespace CarRental.Bookings.Entities
 
         public string Model { get; set; }
 
-        public float DailyCost { get; set; }
+        public virtual float DailyCost { get; set; }
 
         public int Mileage { get; set; }
 
+
+        #region r
+
         public CarStyle Style { get; set; }
+
+        #endregion
     }
 }

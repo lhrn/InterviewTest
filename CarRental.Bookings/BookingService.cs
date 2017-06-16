@@ -25,12 +25,14 @@
          */
         public Booking MakeCarBooking(Car car, DateTime start, int duration, float discount, string name)
         {
-            var booking = new Booking();
-            booking.CarId = car.Id;
-            booking.RentalDate = start;
-            booking.ReturnDate = start.AddDays(duration);
-            booking.TotalCost = car.DailyCost * duration;
-            booking.Name = name;
+            var booking = new Booking
+            {
+                CarId = car.Id,
+                RentalDate = start,
+                ReturnDate = start.AddDays(duration),
+                TotalCost = car.DailyCost * duration,
+                Name = name
+            };
 
             // todo:: check for clashes
             // var bookings = _repo.GetCarBookings();
@@ -52,9 +54,9 @@
          */
         public Booking MakeVanBooking(Van van, DateTime start, int duration, float discount, string name)
         {
-            // todo:: make booking for van
-            
-            return null;
+            var booking = MakeCarBooking(van, start, duration, discount, name);
+
+            return booking;
         }
     }
 }
