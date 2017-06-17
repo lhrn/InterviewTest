@@ -45,6 +45,7 @@
     <Compile Include="Calculator\Calculations\VanCalculation.cs" />
     <Compile Include="Calculator\Calculations\VehicleTypeValidator.cs" />
     <Compile Include="Entities\IVehicle.cs" />
+    <Compile Include="GenericBookingRepository.cs" />
     <Compile Include="Validation\IVehicleMaintenanceProvider.cs" />
     <Compile Include="Exceptions\InvalidVehicleTypeException.cs" />
     <Compile Include="Factory\BookingFactory.cs" />
