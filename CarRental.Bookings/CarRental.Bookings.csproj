@@ -40,7 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookingFactory.cs" />
+    <Compile Include="Calculator\Calculations\CarCalculation.cs" />
+    <Compile Include="Calculator\Calculations\ICalculation.cs" />
+    <Compile Include="Calculator\Calculations\VanCalculation.cs" />
+    <Compile Include="Entities\IVehicle.cs" />
+    <Compile Include="Exceptions\InvalidVehicleTypeException.cs" />
+    <Compile Include="Factory\BookingFactory.cs" />
     <Compile Include="Calculator\CostCalculator.cs" />
     <Compile Include="Entities\Booking.cs" />
     <Compile Include="BookingRepository.cs" />
@@ -57,9 +62,7 @@
   <ItemGroup>
     <Content Include="Interviewer Notes.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Factory\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,6 +1,6 @@
 namespace CarRental.Bookings.Entities
 {
-    public class Car
+    public class Car : IVehicle
     {
         public int Id { get; set; }
 

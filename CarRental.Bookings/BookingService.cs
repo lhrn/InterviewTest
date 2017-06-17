@@ -1,5 +1,6 @@
 ﻿using CarRental.Bookings.Calculator;
 using CarRental.Bookings.Exceptions;
+using CarRental.Bookings.Factory;
 using CarRental.Bookings.Validation;
 
 namespace CarRental.Bookings
@@ -43,7 +44,7 @@ namespace CarRental.Bookings
 
             // calculate 
 
-            booking.TotalCost = _costCalculator.CalculateTotalCost(car, duration, discount);
+            booking.TotalCost = _costCalculator.Calculate(car, duration, discount);
 
             _repo.AddCarBooking(booking);
 

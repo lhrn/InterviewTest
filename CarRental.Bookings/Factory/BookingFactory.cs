@@ -1,7 +1,7 @@
 using System;
 using CarRental.Bookings.Entities;
 
-namespace CarRental.Bookings
+namespace CarRental.Bookings.Factory
 {
     public class BookingFactory
     {
