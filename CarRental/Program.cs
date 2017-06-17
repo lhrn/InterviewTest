@@ -1,4 +1,6 @@
-﻿namespace CarRental
+﻿using CarRental.Bookings.Module;
+
+namespace CarRental
 {
     using CarRental.Bookings;
     using System;
@@ -15,7 +17,8 @@
 
         static void Menu()
         {
-            BookingService bookingService = new BookingService(new BookingRepository());
+            BookingService bookingService = BookingsModule.GetService();
+
             Console.Out.WriteLine("Vehicle Rentals Ltd.");
 
             while (true)
@@ -31,7 +34,7 @@
                 }
                 else if (input == "2")
                 {
-                    bookingService.MakeVanBooking(GetVan(), GetDate(), GetDuration(), GetDiscount(), GetName());
+                    bookingService.MakeCarBooking(GetVan(), GetDate(), GetDuration(), GetDiscount(), GetName());
                 }
                 else break;
             }

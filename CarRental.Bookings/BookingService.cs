@@ -1,60 +1,51 @@
-﻿namespace CarRental.Bookings
+﻿using CarRental.Bookings.Calculator;
+using CarRental.Bookings.Exceptions;
+using CarRental.Bookings.Validation;
+
+namespace CarRental.Bookings
 {
     using System;
-    using CarRental.Bookings.Entities;
+    using Entities;
 
     public class BookingService
     {
-        private readonly BookingRepository _repo;
+        #region init
 
-        public BookingService(BookingRepository repo)
+        private readonly BookingRepository _repo;
+        private readonly NewBookingValidator _newBookingValidator;
+        private readonly BookingFactory _bookingFactory;
+        private readonly CostCalculator _costCalculator;
+
+        public BookingService(BookingRepository repo, NewBookingValidator newBookingValidator, BookingFactory bookingFactory, 
+            CostCalculator costCalculator)
         {
             _repo = repo;
+            _newBookingValidator = newBookingValidator;
+            _bookingFactory = bookingFactory;
+            _costCalculator = costCalculator;
         }
 
-        /* SPEC
-         * Book a car from a [start] date for a given number of days [duration].
-         * 
-         * A specific car can only be booked if it isn't already booked out. After each car booking, 
-         * an extra day is required for valeting and can't be booked out on this day.
-         * 
-         * The [TotalCost] of a car booking is the cars [DailyCost] multiplied by the number of days. The
-         * agreed discount is then applied onto final value.
-         * 
-         * If the booking can't be made, raise an exception highlighting the specific error.
-         */
+        #endregion
+
+
         public Booking MakeCarBooking(Car car, DateTime start, int duration, float discount, string name)
         {
-            var booking = new Booking
-            {
-                CarId = car.Id,
-                RentalDate = start,
-                ReturnDate = start.AddDays(duration),
-                TotalCost = car.DailyCost * duration,
-                Name = name
-            };
+            var booking = _bookingFactory.NewBooking(car, start, duration, name);
 
-            // todo:: check for clashes
-            // var bookings = _repo.GetCarBookings();
-            //_repo.AddCarBooking(booking);
+            var currentBookings = _repo.GetCarBookings();
 
-            return booking;
-        }
+            // check for clashes
 
-        /* SPEC
-         * Book a van from a [start] date for a given number of days [duration].
-         * 
-         * A specific van can only be booked if it isn't already booked out. No valet is required for a van.
-         * 
-         * The daily rate for a van after 5 days is subject to a further 25% discount.
-         * The [TotalCost] of a van booking is the vans [DailyCost] multiplied by the number of days. The
-         * agreed discount is then applied onto final value.
-         * 
-         * If the booking can't be made, raise an exception highlighting the specific error.
-         */
-        public Booking MakeVanBooking(Van van, DateTime start, int duration, float discount, string name)
-        {
-            var booking = MakeCarBooking(van, start, duration, discount, name);
+            var canBook = _newBookingValidator.CanBook(booking, currentBookings);
+
+            if (canBook == false)
+                throw CannotBookCarException.New(booking);
+
+            // calculate 
+
+            booking.TotalCost = _costCalculator.CalculateTotalCost(car, duration, discount);
+
+            _repo.AddCarBooking(booking);
 
             return booking;
         }
