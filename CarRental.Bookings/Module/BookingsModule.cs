@@ -12,16 +12,19 @@ namespace CarRental.Bookings.Module
             // S E T U P
 
             ICalculation[] calculations = {
-                new CarCalculation()
+                new CarCalculation(),
+                new VanCalculation()
             };
 
             var defaultCalculation = new CarCalculation();
+
+            var vehicleMaintenanceProvider = new VehicleMaintenanceProvider();
 
             // G R A P H
 
             return new BookingService(
                         new BookingRepository(), 
-                        new NewBookingValidator(), 
+                        new NewBookingValidator(vehicleMaintenanceProvider), 
                         new BookingFactory(), 
                         new CostCalculator(calculations, defaultCalculation));
         }

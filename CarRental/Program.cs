@@ -1,4 +1,6 @@
-﻿using CarRental.Bookings.Module;
+﻿using CarRental.Bookings.Entities;
+using CarRental.Bookings.Exceptions;
+using CarRental.Bookings.Module;
 
 namespace CarRental
 {
@@ -28,15 +30,26 @@ namespace CarRental
                 Console.Out.WriteLine("Enter your selection:");
                 var input = Console.In.ReadLine();
 
-                if (input == "1")
+                try
                 {
-                    bookingService.MakeCarBooking(GetCar(), GetDate(), GetDuration(), GetDiscount(), GetName());
+                    IVehicle vehicle;
+
+                    if (input == "1")
+                    {
+                        vehicle = GetCar();
+                    }
+                    else if (input == "2")
+                    {
+                        vehicle = GetVan();
+                    }
+                    else break;
+
+                    bookingService.MakeCarBooking(vehicle, GetDate(), GetDuration(), GetDiscount(), GetName());
                 }
-                else if (input == "2")
+                catch (CannotBookCarException e)
                 {
-                    bookingService.MakeCarBooking(GetVan(), GetDate(), GetDuration(), GetDiscount(), GetName());
+                    Console.WriteLine(e.Message);
                 }
-                else break;
             }
         }
 

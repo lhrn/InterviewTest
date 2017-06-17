@@ -19,7 +19,7 @@ namespace CarRental.Bookings.Calculator.Calculations
 
         protected bool IsVehicleType<TType>(IVehicle vehicle) where TType : class, IVehicle
         {
-            var isType = vehicle is TType;
+            var isType = vehicle.GetType() == typeof(TType);
 
             return isType;
         }

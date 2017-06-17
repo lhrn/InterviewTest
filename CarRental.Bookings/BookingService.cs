@@ -29,9 +29,9 @@ namespace CarRental.Bookings
         #endregion
 
 
-        public Booking MakeCarBooking(Car car, DateTime start, int duration, float discount, string name)
+        public Booking MakeCarBooking(IVehicle vehicle, DateTime start, int duration, float discount, string name)
         {
-            var booking = _bookingFactory.NewBooking(car, start, duration, name);
+            var booking = _bookingFactory.NewBooking(vehicle, start, duration, name);
 
             var currentBookings = _repo.GetCarBookings();
 
@@ -44,7 +44,7 @@ namespace CarRental.Bookings
 
             // calculate 
 
-            booking.TotalCost = _costCalculator.Calculate(car, duration, discount);
+            booking.TotalCost = _costCalculator.Calculate(vehicle, duration, discount);
 
             _repo.AddCarBooking(booking);
 
