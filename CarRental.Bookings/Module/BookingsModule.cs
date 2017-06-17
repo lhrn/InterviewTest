@@ -23,7 +23,7 @@ namespace CarRental.Bookings.Module
             // G R A P H
 
             return new BookingService(
-                        new GenericBookingRepository(), 
+                        new BookingRepository(), 
                         new NewBookingValidator(vehicleMaintenanceProvider), 
                         new BookingFactory(), 
                         new CostCalculator(calculations, defaultCalculation));

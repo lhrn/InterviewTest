@@ -33,7 +33,7 @@ namespace CarRental.Bookings
         {
             var booking = _bookingFactory.NewBooking(vehicle, start, duration, name);
 
-            var currentBookings = _repo.GetCarBookings();
+            var currentBookings = _repo.GetBookings();
 
             // check for clashes
 
@@ -46,7 +46,7 @@ namespace CarRental.Bookings
 
             booking.TotalCost = _costCalculator.Calculate(vehicle, duration, discount);
 
-            _repo.AddCarBooking(booking);
+            _repo.AddBooking(booking);
 
             return booking;
         }
