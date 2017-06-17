@@ -43,6 +43,7 @@
     <Compile Include="Calculator\Calculations\CarCalculation.cs" />
     <Compile Include="Calculator\Calculations\ICalculation.cs" />
     <Compile Include="Calculator\Calculations\VanCalculation.cs" />
+    <Compile Include="Calculator\Calculations\VehicleTypeValidator.cs" />
     <Compile Include="Entities\IVehicle.cs" />
     <Compile Include="Exceptions\InvalidVehicleTypeException.cs" />
     <Compile Include="Factory\BookingFactory.cs" />
