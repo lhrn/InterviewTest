@@ -43,9 +43,11 @@
     <Compile Include="Calculator\Calculations\CarCalculation.cs" />
     <Compile Include="Calculator\Calculations\CarNovember2For1Calculation.cs" />
     <Compile Include="Calculator\Calculations\ICalculation.cs" />
+    <Compile Include="Calculator\Calculations\MotorBikeCalculation.cs" />
     <Compile Include="Calculator\Calculations\VanCalculation.cs" />
     <Compile Include="Calculator\Calculations\VehicleTypeValidator.cs" />
     <Compile Include="Entities\IVehicle.cs" />
+    <Compile Include="Entities\Motorbike.cs" />
     <Compile Include="Entities\VehicleBase.cs" />
     <Compile Include="GenericBookingRepository.cs" />
     <Compile Include="Validation\IVehicleMaintenanceProvider.cs" />
