@@ -19,6 +19,9 @@ namespace CarRental
 
         static void Menu()
         {
+
+
+
             BookingService bookingService = BookingsModule.GetService();
 
             Console.Out.WriteLine("Vehicle Rentals Ltd.");

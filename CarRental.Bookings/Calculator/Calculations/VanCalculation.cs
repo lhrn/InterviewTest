@@ -4,7 +4,7 @@ namespace CarRental.Bookings.Calculator.Calculations
 {
     public class VanCalculation : VehicleTypeValidator<Van>, ICalculation
     {
-        public float Run(IVehicle vehicle, int duration, float discount)
+        public float Run(IVehicle vehicle, int duration, float discount, Booking booking)
         {
             var van = CastToType(vehicle);
 

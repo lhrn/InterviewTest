@@ -19,11 +19,11 @@ namespace CarRental.Bookings.Calculator
 
         #endregion
 
-        public float Calculate(IVehicle vehicle, int duration, float discount)
+        public float Calculate(IVehicle vehicle, int duration, float discount, Booking booking)
         {
             var calculation = _calculations.FirstOrDefault(c => c.AppliesTo(vehicle)) ?? _defaultCalculation;
 
-            var cost = calculation.Run(vehicle, duration, discount);
+            var cost = calculation.Run(vehicle, duration, discount, booking);
 
             return cost;
         }

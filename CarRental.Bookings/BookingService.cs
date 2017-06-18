@@ -44,7 +44,7 @@ namespace CarRental.Bookings
 
             // calculate 
 
-            booking.TotalCost = _costCalculator.Calculate(vehicle, duration, discount);
+            booking.TotalCost = _costCalculator.Calculate(vehicle, duration, discount, booking);
 
             _repo.AddBooking(booking);
 

@@ -12,7 +12,8 @@ namespace CarRental.Bookings.Module
             // S E T U P
 
             ICalculation[] calculations = {
-                new CarCalculation(),
+                //new CarCalculation(),
+                new CarNovember2For1Calculation(), 
                 new VanCalculation()
             };
 
