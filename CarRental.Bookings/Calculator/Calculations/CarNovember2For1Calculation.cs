@@ -18,14 +18,14 @@ namespace CarRental.Bookings.Calculator.Calculations
             return base.Run(vehicle, duration, discount, booking);
         }
 
-        //TODO -> if more specific conditions also needed in future then rather pass additional ICalculation[]'s to 'CarCalculation' as '(ICalculation[] subcalculations) instead'
+        //TODO -> if more conditions needed in future, then rather pass additional ICalculation[]'s to 'CarCalculation' as '(ICalculation[] subcalculations) instead'
         private static bool CanApplyDiscount(Car car, int duration, Booking booking) 
         {
             const int november = 11;
 
             return booking.RentalDate.Month == november
                    & duration >= 2
-                   & (car.Style == CarStyle.SUV | car.Style != CarStyle.Saloon);
+                   & (car.Style == CarStyle.SUV | car.Style == CarStyle.Saloon);
         }
     }
 }
