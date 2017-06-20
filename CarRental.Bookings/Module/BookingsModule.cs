@@ -1,5 +1,8 @@
 ﻿using CarRental.Bookings.Calculator;
 using CarRental.Bookings.Calculator.Calculations;
+using CarRental.Bookings.Calculator.Calculations.Cars;
+using CarRental.Bookings.Calculator.Calculations.Motorbikes;
+using CarRental.Bookings.Calculator.Calculations.Vans;
 using CarRental.Bookings.Factory;
 using CarRental.Bookings.Validation;
 
@@ -28,7 +31,7 @@ namespace CarRental.Bookings.Module
                         new BookingRepository(), 
                         new NewBookingValidator(vehicleMaintenanceProvider), 
                         new BookingFactory(), 
-                        new CostCalculator(calculations, defaultCalculation));
+                        new BookingCostCalculator(calculations, defaultCalculation));
         }
     }
 }

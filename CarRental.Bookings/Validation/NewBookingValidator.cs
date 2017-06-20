@@ -4,7 +4,7 @@ using CarRental.Bookings.Entities;
 
 namespace CarRental.Bookings.Validation
 {
-    public class NewBookingValidator
+    public class NewBookingValidator : INewBookingValidator
     {
         #region init
 

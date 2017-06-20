@@ -2,6 +2,7 @@
 using CarRental.Bookings.Exceptions;
 using CarRental.Bookings.Factory;
 using CarRental.Bookings.Validation;
+using CarRental.Vehicles;
 
 namespace CarRental.Bookings
 {
@@ -15,15 +16,15 @@ namespace CarRental.Bookings
         private readonly BookingRepository _repo;
         private readonly NewBookingValidator _newBookingValidator;
         private readonly BookingFactory _bookingFactory;
-        private readonly CostCalculator _costCalculator;
+        private readonly BookingCostCalculator _bookingCostCalculator;
 
         public BookingService(BookingRepository repo, NewBookingValidator newBookingValidator, BookingFactory bookingFactory, 
-            CostCalculator costCalculator)
+            BookingCostCalculator bookingCostCalculator)
         {
             _repo = repo;
             _newBookingValidator = newBookingValidator;
             _bookingFactory = bookingFactory;
-            _costCalculator = costCalculator;
+            _bookingCostCalculator = bookingCostCalculator;
         }
 
         #endregion
@@ -44,7 +45,7 @@ namespace CarRental.Bookings
 
             // calculate 
 
-            booking.TotalCost = _costCalculator.Calculate(vehicle, duration, discount, booking);
+            booking.TotalCost = _bookingCostCalculator.Calculate(vehicle, duration, discount, booking);
 
             _repo.AddBooking(booking);
 

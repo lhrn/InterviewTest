@@ -1,6 +1,8 @@
+using CarRental.Bookings.Common;
 using CarRental.Bookings.Entities;
+using CarRental.Vehicles;
 
-namespace CarRental.Bookings.Calculator.Calculations
+namespace CarRental.Bookings.Calculator.Calculations.Vans
 {
     public class VanCalculation : VehicleTypeValidator<Van>, ICalculation
     {

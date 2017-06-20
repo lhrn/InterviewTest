@@ -1,7 +1,8 @@
-using System.ComponentModel;
+using CarRental.Bookings.Common;
 using CarRental.Bookings.Entities;
+using CarRental.Vehicles;
 
-namespace CarRental.Bookings.Calculator.Calculations
+namespace CarRental.Bookings.Calculator.Calculations.Cars
 {
     public class CarCalculation : VehicleTypeValidator<Car>, ICalculation
     {

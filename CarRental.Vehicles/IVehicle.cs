@@ -1,4 +1,4 @@
-﻿namespace CarRental.Bookings.Entities
+﻿namespace CarRental.Vehicles
 {
     public interface IVehicle
     {

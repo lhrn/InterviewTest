@@ -1,6 +1,7 @@
 using CarRental.Bookings.Entities;
+using CarRental.Vehicles;
 
-namespace CarRental.Bookings.Calculator.Calculations
+namespace CarRental.Bookings.Calculator.Calculations.Cars
 {
     public class CarNovember2For1Calculation : CarCalculation
     {

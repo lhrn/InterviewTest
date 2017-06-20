@@ -1,17 +1,18 @@
 using System.Linq;
 using CarRental.Bookings.Calculator.Calculations;
 using CarRental.Bookings.Entities;
+using CarRental.Vehicles;
 
 namespace CarRental.Bookings.Calculator
 {
-    public class CostCalculator
+    public class BookingCostCalculator : ICostCalculator
     {
         #region init
 
         private readonly ICalculation[] _calculations;
         private readonly ICalculation _defaultCalculation;
 
-        public CostCalculator(ICalculation[] calculations, ICalculation defaultCalculation)
+        public BookingCostCalculator(ICalculation[] calculations, ICalculation defaultCalculation)
         {
             _calculations = calculations;
             _defaultCalculation = defaultCalculation;

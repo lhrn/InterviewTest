@@ -1,6 +1,7 @@
 ﻿using CarRental.Bookings.Entities;
 using CarRental.Bookings.Exceptions;
 using CarRental.Bookings.Module;
+using CarRental.Vehicles;
 
 namespace CarRental
 {
@@ -19,18 +20,14 @@ namespace CarRental
 
         static void Menu()
         {
-
-
-
-            BookingService bookingService = BookingsModule.GetService();
+            var bookingService = BookingsModule.GetService();
 
             Console.Out.WriteLine("Vehicle Rentals Ltd.");
 
             while (true)
             {
-                Console.Out.WriteLine("1. Make a car booking");
-                Console.Out.WriteLine("2. Make a van booking");
-                Console.Out.WriteLine("Enter your selection:");
+                PrintOptions();
+
                 var input = Console.In.ReadLine();
 
                 try
@@ -56,16 +53,23 @@ namespace CarRental
             }
         }
 
+        private static void PrintOptions()
+        {
+            Console.Out.WriteLine("1. Make a car booking");
+            Console.Out.WriteLine("2. Make a van booking");
+            Console.Out.WriteLine("Enter your selection:");
+        }
+
         #region Don't worry about this code unless you need to
-        static Bookings.Entities.Car GetCar()
+        static Car GetCar()
         {
             Console.Out.WriteLine("Select Car:");
-            var cars = new List<Bookings.Entities.Car>
+            var cars = new List<Car>
             {
-                new Bookings.Entities.Car { Id = 1, Make = "Ford", Model = "Focus", DailyCost = 80, Mileage = 11000, Style = Bookings.Entities.CarStyle.HatchBack },
-                new Bookings.Entities.Car { Id = 2, Make = "Honda", Model = "Civic", DailyCost = 80, Mileage = 12000, Style = Bookings.Entities.CarStyle.HatchBack },
-                new Bookings.Entities.Car { Id = 3, Make = "Seat", Model = "Leon", DailyCost = 80, Mileage = 13000, Style = Bookings.Entities.CarStyle.HatchBack },
-                new Bookings.Entities.Car { Id = 4, Make = "BMW", Model = "3 Series", DailyCost = 100, Mileage = 14000, Style = Bookings.Entities.CarStyle.Saloon }
+                new Car { Id = 1, Make = "Ford", Model = "Focus", DailyCost = 80, Mileage = 11000, Style = CarStyle.HatchBack },
+                new Car { Id = 2, Make = "Honda", Model = "Civic", DailyCost = 80, Mileage = 12000, Style = CarStyle.HatchBack },
+                new Car { Id = 3, Make = "Seat", Model = "Leon", DailyCost = 80, Mileage = 13000, Style = CarStyle.HatchBack },
+                new Car { Id = 4, Make = "BMW", Model = "3 Series", DailyCost = 100, Mileage = 14000, Style = CarStyle.Saloon }
             };
             int idx = 1;
             cars.ForEach(c => Console.Out.WriteLine("{0}: {1} {2}", idx++, c.Make, c.Model));
@@ -75,15 +79,15 @@ namespace CarRental
             return cars.ElementAt(input - 1);
         }
 
-        static Bookings.Entities.Van GetVan()
+        static Van GetVan()
         {
             Console.Out.WriteLine("Select Van:");
-            var vans = new List<Bookings.Entities.Van>
+            var vans = new List< Van>
             {
-                new Bookings.Entities.Van { Id = 5, Make = "Merc", Model = "Sprinter", DailyCost = 150, Mileage = 11000, WheelBase = Bookings.Entities.WheelBase.Short },
-                new Bookings.Entities.Van { Id = 6, Make = "Ford", Model = "Transit", DailyCost = 150, Mileage = 12000, WheelBase = Bookings.Entities.WheelBase.Short },
-                new Bookings.Entities.Van { Id = 7, Make = "Renault", Model = "Box", DailyCost = 160, Mileage = 13000, WheelBase = Bookings.Entities.WheelBase.Long },
-                new Bookings.Entities.Van { Id = 8, Make = "Toyota", Model = "Toyota Van", DailyCost = 200, Mileage = 14000, WheelBase = Bookings.Entities.WheelBase.Long }
+                new Van { Id = 5, Make = "Merc", Model = "Sprinter", DailyCost = 150, Mileage = 11000, WheelBase = WheelBase.Short },
+                new Van { Id = 6, Make = "Ford", Model = "Transit", DailyCost = 150, Mileage = 12000, WheelBase = WheelBase.Short },
+                new Van { Id = 7, Make = "Renault", Model = "Box", DailyCost = 160, Mileage = 13000, WheelBase = WheelBase.Long },
+                new Van { Id = 8, Make = "Toyota", Model = "Toyota Van", DailyCost = 200, Mileage = 14000, WheelBase = WheelBase.Long }
             };
             int idx = 1;
             vans.ForEach(v => Console.Out.WriteLine("{0}: {1} {2}", idx++, v.Make, v.Model));

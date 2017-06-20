@@ -1,13 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.13
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Bookings", "CarRental.Bookings\CarRental.Bookings.csproj", "{7ABEB2AB-B407-46D3-8BFC-1832A8187DCE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Bookings.Tests", "CarRental.Bookings.Tests\CarRental.Bookings.Tests.csproj", "{D9716B65-0B7F-4007-9860-FB5C17130F86}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental", "CarRental\CarRental.csproj", "{EED61805-B49F-4D7A-8D28-54D7BFB6E647}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Vehicles", "CarRental.Vehicles\CarRental.Vehicles.csproj", "{662923E8-288F-4C6A-B1B2-F4204D1DD9CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{0353F468-8F3F-4562-8BE0-3B5C4136645E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FDDD2CDF-EFB3-467E-A000-D56F094246B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,8 +33,17 @@ Global
 		{EED61805-B49F-4D7A-8D28-54D7BFB6E647}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EED61805-B49F-4D7A-8D28-54D7BFB6E647}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EED61805-B49F-4D7A-8D28-54D7BFB6E647}.Release|Any CPU.Build.0 = Release|Any CPU
+		{662923E8-288F-4C6A-B1B2-F4204D1DD9CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{662923E8-288F-4C6A-B1B2-F4204D1DD9CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{662923E8-288F-4C6A-B1B2-F4204D1DD9CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{662923E8-288F-4C6A-B1B2-F4204D1DD9CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7ABEB2AB-B407-46D3-8BFC-1832A8187DCE} = {0353F468-8F3F-4562-8BE0-3B5C4136645E}
+		{D9716B65-0B7F-4007-9860-FB5C17130F86} = {FDDD2CDF-EFB3-467E-A000-D56F094246B4}
+		{662923E8-288F-4C6A-B1B2-F4204D1DD9CB} = {0353F468-8F3F-4562-8BE0-3B5C4136645E}
 	EndGlobalSection
 EndGlobal

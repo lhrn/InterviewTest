@@ -1,7 +1,8 @@
 ﻿using CarRental.Bookings.Entities;
 using CarRental.Bookings.Exceptions;
+using CarRental.Vehicles;
 
-namespace CarRental.Bookings.Calculator.Calculations
+namespace CarRental.Bookings.Common
 {
     public class VehicleTypeValidator<TTarget> where TTarget : class, IVehicle
     {
