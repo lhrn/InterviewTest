@@ -1,13 +1,13 @@
-﻿using CarRental.Bookings.Calculator;
-using CarRental.Bookings.Exceptions;
-using CarRental.Bookings.Factory;
-using CarRental.Bookings.Validation;
+﻿using CarRental.Bookings.lib.Exceptions;
+using CarRental.Bookings.lib.Factory;
+using CarRental.Bookings.lib.Module;
+using CarRental.Bookings.lib.Validation;
+using CarRental.Bookings.Pricing;
 using CarRental.Vehicles;
 
 namespace CarRental.Bookings
 {
     using System;
-    using Entities;
 
     public class BookingService
     {

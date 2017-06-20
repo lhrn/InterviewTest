@@ -1,6 +1,5 @@
-﻿using CarRental.Bookings.Entities;
-using CarRental.Bookings.Exceptions;
-using CarRental.Bookings.Module;
+﻿using CarRental.Bookings.lib.Exceptions;
+using CarRental.Bookings.lib.Module;
 using CarRental.Vehicles;
 using CarRental.Vehicles.Cars;
 using CarRental.Vehicles.Vans;

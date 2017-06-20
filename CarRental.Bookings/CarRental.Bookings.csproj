@@ -34,31 +34,28 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculator\Calculations\Cars\CarCalculation.cs" />
-    <Compile Include="Calculator\Calculations\Cars\CarNovember2For1Calculation.cs" />
-    <Compile Include="Calculator\Calculations\ICalculation.cs" />
-    <Compile Include="Calculator\Calculations\Motorbikes\MotorBikeCalculation.cs" />
-    <Compile Include="Calculator\Calculations\Vans\VanCalculation.cs" />
-    <Compile Include="Common\VehicleTypeValidator.cs" />
-    <Compile Include="Calculator\ICostCalculator.cs" />
-    <Compile Include="Factory\IBookingFactory.cs" />
-    <Compile Include="GenericBookingRepository.cs" />
-    <Compile Include="Validation\INewBookingValidator.cs" />
-    <Compile Include="Validation\IVehicleMaintenanceProvider.cs" />
-    <Compile Include="Exceptions\InvalidVehicleTypeException.cs" />
-    <Compile Include="Factory\BookingFactory.cs" />
-    <Compile Include="Calculator\BookingCostCalculator.cs" />
-    <Compile Include="Entities\Booking.cs" />
-    <Compile Include="BookingRepository.cs" />
+    <Compile Include="Pricing\Calculations\Cars\CarCalculation.cs" />
+    <Compile Include="Pricing\Calculations\Cars\CarNovember2For1Calculation.cs" />
+    <Compile Include="Pricing\Calculations\ICalculation.cs" />
+    <Compile Include="Pricing\Calculations\Motorbikes\MotorBikeCalculation.cs" />
+    <Compile Include="Pricing\Calculations\Vans\VanCalculation.cs" />
+    <Compile Include="Pricing\ICostCalculator.cs" />
+    <Compile Include="lib\Factory\IBookingFactory.cs" />
+    <Compile Include="lib\Module\GenericBookingRepository.cs" />
+    <Compile Include="IBookingRepository.cs" />
+    <Compile Include="lib\Validation\INewBookingValidator.cs" />
+    <Compile Include="lib\Factory\BookingFactory.cs" />
+    <Compile Include="Pricing\BookingCostCalculator.cs" />
+    <Compile Include="Booking.cs" />
+    <Compile Include="lib\Module\BookingRepository.cs" />
     <Compile Include="BookingService.cs" />
-    <Compile Include="Validation\VehicleMaintenanceProvider.cs" />
-    <Compile Include="Module\BookingsModule.cs" />
+    <Compile Include="lib\Module\BookingsModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Validation\NewBookingValidator.cs" />
-    <Compile Include="Exceptions\CannotBookCarException.cs" />
+    <Compile Include="lib\Validation\NewBookingValidator.cs" />
+    <Compile Include="lib\Exceptions\CannotBookCarException.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Interviewer Notes.txt" />
+    <Content Include="lib\Module\Interviewer Notes.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CarRental.Vehicles\CarRental.Vehicles.csproj">
@@ -66,6 +63,7 @@
       <Name>CarRental.Vehicles</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

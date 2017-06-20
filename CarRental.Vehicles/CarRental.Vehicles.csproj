@@ -42,12 +42,16 @@
   <ItemGroup>
     <Compile Include="Cars\Car.cs" />
     <Compile Include="Cars\CarStyle.cs" />
+    <Compile Include="lib\InvalidVehicleTypeException.cs" />
+    <Compile Include="lib\VehicleTypeValidator.cs" />
     <Compile Include="IVehicle.cs" />
+    <Compile Include="lib\IVehicleMaintenanceProvider.cs" />
     <Compile Include="Motorbikes\Motorbike.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vans\Van.cs" />
     <Compile Include="VehicleBase.cs" />
     <Compile Include="Vans\WheelBase.cs" />
+    <Compile Include="lib\VehicleMaintenanceProvider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
