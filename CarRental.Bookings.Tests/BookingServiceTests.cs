@@ -1,5 +1,6 @@
 ﻿using CarRental.Bookings.Module;
 using CarRental.Vehicles;
+using CarRental.Vehicles.Cars;
 
 namespace CarRental.Bookings.Tests
 {

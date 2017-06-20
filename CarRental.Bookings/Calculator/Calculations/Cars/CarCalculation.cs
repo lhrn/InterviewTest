@@ -1,6 +1,7 @@
 using CarRental.Bookings.Common;
 using CarRental.Bookings.Entities;
 using CarRental.Vehicles;
+using CarRental.Vehicles.Cars;
 
 namespace CarRental.Bookings.Calculator.Calculations.Cars
 {

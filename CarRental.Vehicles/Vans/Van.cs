@@ -1,4 +1,4 @@
-﻿namespace CarRental.Vehicles
+﻿namespace CarRental.Vehicles.Vans
 {
     public class Van : VehicleBase
     {

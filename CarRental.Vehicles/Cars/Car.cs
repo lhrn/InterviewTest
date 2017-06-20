@@ -1,4 +1,4 @@
-namespace CarRental.Vehicles
+namespace CarRental.Vehicles.Cars
 {
     public class Car : VehicleBase
     {

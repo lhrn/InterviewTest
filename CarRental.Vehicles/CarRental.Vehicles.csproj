@@ -40,14 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Car.cs" />
-    <Compile Include="CarStyle.cs" />
+    <Compile Include="Cars\Car.cs" />
+    <Compile Include="Cars\CarStyle.cs" />
     <Compile Include="IVehicle.cs" />
-    <Compile Include="Motorbike.cs" />
+    <Compile Include="Motorbikes\Motorbike.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Van.cs" />
+    <Compile Include="Vans\Van.cs" />
     <Compile Include="VehicleBase.cs" />
-    <Compile Include="WheelBase.cs" />
+    <Compile Include="Vans\WheelBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
