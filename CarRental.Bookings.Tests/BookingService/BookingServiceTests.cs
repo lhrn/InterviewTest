@@ -1,6 +1,7 @@
 ﻿using System;
 using CarRental.Bookings.lib.Module;
 using CarRental.Vehicles.Cars;
+using CarRental.Vehicles.Vans;
 using NUnit.Framework;
 
 namespace CarRental.Bookings.Tests.BookingService
@@ -23,10 +24,11 @@ namespace CarRental.Bookings.Tests.BookingService
         public void the_return_date_is_calculated_correctly()
         {
             var service = BookingsModule.GetService();
-
             var car = new Car {DailyCost = 100};
 
+            //TODO -> make this a command(void)
             var booking = service.MakeCarBooking(car, DateTime.Today, 1, 0, "Joe Bloggs");
+
             Assert.AreEqual(100, booking.TotalCost);
         }
 
@@ -35,7 +37,26 @@ namespace CarRental.Bookings.Tests.BookingService
         {
             var service = BookingsModule.GetService();
 
+            var car = new Car {DailyCost = 100};
+
+            var booking = service.MakeCarBooking(car, DateTime.Now, 1, 20, "joe blogs");
+
+            Assert.AreEqual(80, booking.TotalCost);
 
         }
+
+        [Test]
+        public void MakeCarBooking_GetsDiscountOf25Percent_WhenVanBooked_MoreThan5Days()
+        {
+            var service = BookingsModule.GetService();
+
+            var van = new Van { DailyCost = 100 };
+
+            var booking = service.MakeCarBooking(van, DateTime.Now, 6, 0, "joe blogs");
+
+            Assert.AreEqual(450, booking.TotalCost);
+        }
+
+
     }
 }
