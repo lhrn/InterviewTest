@@ -8,7 +8,7 @@ using Moq;
 using Ploeh.AutoFixture.Xunit2;
 using Xunit;
 
-namespace CarRental.Bookings.UnitTests.Validation
+namespace CarRental.Bookings.UnitTests.Pricing
 {
     public class BookingCostCalculator_Tests
     {

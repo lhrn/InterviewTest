@@ -67,10 +67,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Pricing\CarNovember2For1Calculation_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\AutoMoqDataAttribute.cs" />
     <Compile Include="Utilities\FixtureFactory.cs" />
-    <Compile Include="Validation\BookingCostCalculator_Tests.cs" />
+    <Compile Include="Pricing\BookingCostCalculator_Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CarRental.Bookings\CarRental.Bookings.csproj">
